@@ -1,5 +1,12 @@
 <?php
 
+    function theme_support(){
+        //add dynamic title tag support
+        add_theme_support('title-tag');
+    }
+    add_action( 'after_setup_theme', 'theme_support' );
+
+
     function register_styles() {
         
         $version = wp_get_theme()->get( 'Version' );
