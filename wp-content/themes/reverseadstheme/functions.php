@@ -39,7 +39,21 @@
     add_action( 'wp_enqueue_scripts', 'register_script' );
 
 
-
-
+    function widget_areas(){
+        register_sidebar(
+            array(
+                'before_title' => '<h2>',
+                'after_title' => '</h2>',
+                'before_widget' => '',
+                'after_widget' => '',
+            ),
+            array(
+                'name' => 'Sidebar Area',
+                'id' => 'sidebar-1',
+                'discription' => 'Sidebar widget area'
+            )
+        );
+    }
+    add_action( 'widgets_init', 'widget_areas' );
 
 ?>
